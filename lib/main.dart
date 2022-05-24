@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          backgroundColor: const Color(0xEAEAEAFF),
+          backgroundColor: const Color(0xEAF5F5FD),
           appBar: AppBar(
             title: Container(
               height: 30.0,
@@ -74,41 +74,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Row(
-// children: [
-// Expanded(
-// child: Padding(
-// padding: const EdgeInsets.all(16.0),
-// child: Column(
-// children: [
-// Text(state.listPizza?[index].name ?? '',
-// style: const TextStyle(
-// fontSize: 18.0,
-// color: Colors.black,
-// fontWeight: FontWeight.bold)),
-// const SizedBox(
-// height: 5.0,
-// ),
-// Text(
-// 'Price: ${state.listPizza?[index].price != null ? state.listPizza![index].price!.toString() : 0} ' +
-// AppStrings.usd,
-// style: const TextStyle(
-// fontSize: 14.0,
-// color: Colors.orangeAccent,
-// fontWeight: FontWeight.bold)),
-// ],
-// ),
-// )),
-// Container(
-// height: 161.0,
-// width: 150.0,
-// padding: const EdgeInsets.all(16.0),
-// decoration: const BoxDecoration(color: Colors.white),
-// child: FadeInImage.assetNetwork(
-// placeholder: 'assets/gif/loading.gif',
-// image: state.listPizza![index].img!,
-// fit: BoxFit.cover,
-// ),
-// )
-// ],
-// ),
