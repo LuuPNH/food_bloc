@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:phannhuhailuu_17dh110419/components/food_item.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
+import 'package:phannhuhailuu_17dh110419/view/cart/cart_widget.dart';
 import 'package:phannhuhailuu_17dh110419/view/destination_carousel/destination_arousel.dart';
 import 'package:phannhuhailuu_17dh110419/view/home/home_bloc.dart';
 
@@ -21,7 +22,6 @@ class _HomeWidgetState extends State<HomeWidget> {
   GlobalKey<PageContainerState> key = GlobalKey();
 
   late HomeBloc bloc;
-  late CartBloc blocCart;
 
   @override
   void initState() {
@@ -32,7 +32,6 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   void didChangeDependencies() {
     bloc = HomeBloc()..add(LoadListFoodEvent());
-    blocCart = CartBloc()..add(LoadCart());
     super.didChangeDependencies();
   }
 
@@ -51,9 +50,6 @@ class _HomeWidgetState extends State<HomeWidget> {
           BlocProvider<HomeBloc>(
             create: (BuildContext context) => bloc,
           ),
-          BlocProvider<CartBloc>(
-            create: (BuildContext context) => blocCart,
-          ),
         ],
         child: BlocConsumer<HomeBloc, HomeState>(
           listener: _handleAction,
@@ -65,17 +61,22 @@ class _HomeWidgetState extends State<HomeWidget> {
     return Scaffold(
       backgroundColor: const Color(0xEAEAEAFF),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const CartWidget()));
+          },
           backgroundColor: const Color(0xFFFDBF30),
           elevation: 2,
-          child: Badge(
-            badgeContent: Text(context.read<CartBloc>().state.listCart?.length.toString() ?? '0'),
-            child: const  Icon(
-              Icons.shopping_bag_outlined,
-              color: Colors.black,
-              size: 30,
-            ),
-          )),
+          child: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
+            return Badge(
+              badgeContent: Text(state.listCart?.length.toString() ?? '0'),
+              child: const Icon(
+                Icons.shopping_bag_outlined,
+                color: Colors.black,
+                size: 30,
+              ),
+            );
+          })),
       body: SingleChildScrollView(
         physics: const ScrollPhysics(),
         child: Column(
@@ -116,7 +117,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                     shrinkWrap: true,
                     itemCount: state.listPizza!.length,
                     itemBuilder: (context, index) {
-                      return FoodItem(state.listPizza?[index]);
+                      return FoodItem(
+                        state.listPizza?[index],
+                        onTap: () {
+                          context
+                              .read<CartBloc>()
+                              .add(AddItemToCart(state.listPizza?[index]));
+                        },
+                      );
                     });
               }
             })

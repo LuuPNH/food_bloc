@@ -5,7 +5,10 @@ class CartEvent {}
 class LoadCart extends CartEvent {}
 
 class AddItemToCart extends CartEvent {
-  final Cart? item;
+  final Pizza? item;
+  final bool minus;
 
-  AddItemToCart(this.item);
+  AddItemToCart(this.item, {this.minus = false});
 }
+
+class CheckOutCart extends CartEvent {}

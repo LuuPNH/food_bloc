@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:phannhuhailuu_17dh110419/models/pizza.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:phannhuhailuu_17dh110419/components/button_add_remove.dart';
+import 'package:phannhuhailuu_17dh110419/models/cart.dart';
 import 'package:phannhuhailuu_17dh110419/utils/app_string.dart';
+import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
 
-class FoodItem extends StatelessWidget {
-  final Pizza? food;
+class CartItem extends StatelessWidget {
+  final Cart? cartItem;
   final Function()? onTap;
 
-  const FoodItem(this.food, {Key? key, this.onTap}) : super(key: key);
+  const CartItem(this.cartItem, {Key? key, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class FoodItem extends StatelessWidget {
             ),
             child: Row(
               children: [
-                if (food?.img != null)
+                if (cartItem?.item?.img != null)
                   Container(
                     height: 161.0,
                     width: 150.0,
@@ -33,7 +35,7 @@ class FoodItem extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20)),
                     child: FadeInImage.assetNetwork(
                         placeholder: 'assets/gif/loading.gif',
-                        image: food!.img!,
+                        image: cartItem!.item!.img!,
                         fit: BoxFit.cover,
                         fadeInCurve: Curves.easeIn),
                   ),
@@ -48,7 +50,7 @@ class FoodItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          food?.name ?? '',
+                          cartItem!.item!.name ?? '',
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -56,17 +58,26 @@ class FoodItem extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Text(
-                              'Price ${food?.price != null ? food!.price! : 0}' +
-                                  AppStrings.usd,
-                              style: const TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.orangeAccent),
-                            )
-                          ],
+                        Text(
+                          'Price ${cartItem?.item?.price != null ? cartItem!.item!.price! : 0}' +
+                              AppStrings.usd,
+                          style: const TextStyle(
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.orangeAccent),
+                        ),
+                        const SizedBox(height: 5),
+                        ButtonAddRemove(
+                          onCountAdd: () {
+                            context
+                                .read<CartBloc>()
+                                .add(AddItemToCart(cartItem?.item));
+                          },
+                          count: cartItem?.count ?? 0,
+                          onCountRemove: () {
+                            context.read<CartBloc>().add(
+                                AddItemToCart(cartItem?.item, minus: true));
+                          },
                         )
                       ],
                     ),
@@ -75,25 +86,6 @@ class FoodItem extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-              right: -10.0,
-              bottom: 0.0,
-              child: GestureDetector(
-                onTap: onTap,
-                child: Container(
-                  height: 40.0,
-                  width: 60.0,
-                  decoration: const BoxDecoration(
-                      color: Color(0xFFADBF00),
-                      borderRadius:
-                          BorderRadius.only(topLeft: Radius.circular(10.0))),
-                  child: const Icon(
-                    FontAwesomeIcons.cartPlus,
-                    color: Colors.black,
-                    size: 20,
-                  ),
-                ),
-              ))
         ],
       ),
     );
