@@ -7,6 +7,7 @@ import 'package:phannhuhailuu_17dh110419/components/cart_item.dart';
 import 'package:phannhuhailuu_17dh110419/utils/app_dialog.dart';
 import 'package:phannhuhailuu_17dh110419/utils/app_string.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
+import 'package:phannhuhailuu_17dh110419/view/home/detai_food/detail_food_widget.dart';
 
 class CartWidget extends StatefulWidget {
   const CartWidget({Key? key}) : super(key: key);
@@ -87,7 +88,15 @@ class _CartWidgetState extends State<CartWidget> {
                     if (state.listCart?[index]?.count != 0) {
                       return CartItem(
                         state.listCart?[index],
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushReplacement<void, void>(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailFoodWidget(
+                                      id: state.listCart?[index]?.item?.id,
+                                    )),
+                          );
+                        },
                       );
                     } else {
                       return const SizedBox();
