@@ -1,10 +1,10 @@
-import 'package:badges/badges.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phannhuhailuu_17dh110419/components/button_add_remove.dart';
+import 'package:phannhuhailuu_17dh110419/components/floating_button_cart.dart';
 import 'package:phannhuhailuu_17dh110419/utils/app_string.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_widget.dart';
@@ -36,23 +36,12 @@ class _DetailFoodWidgetState extends State<DetailFoodWidget> {
 
   Widget _buildBody(BuildContext context, DetailFoodState state) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => const CartWidget()));
-          },
-          backgroundColor: const Color(0xFFFDBF30),
-          elevation: 2,
-          child: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
-            return Badge(
-              badgeContent: Text(state.listCart?.length.toString() ?? '0'),
-              child: const Icon(
-                Icons.shopping_bag_outlined,
-                color: Colors.black,
-                size: 30,
-              ),
-            );
-          })),
+      floatingActionButton: FloatingButtonCart(
+        onTap: () {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const CartWidget()));
+        },
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -181,66 +170,6 @@ class _DetailFoodWidgetState extends State<DetailFoodWidget> {
     );
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     floatingActionButton: FloatingActionButton(
-  //         onPressed: () {
-  //           Navigator.pushReplacement(context,
-  //               MaterialPageRoute(builder: (context) => const CartWidget()));
-  //         },
-  //         backgroundColor: const Color(0xFFFDBF30),
-  //         elevation: 2,
-  //         child: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
-  //           return Badge(
-  //             badgeContent: Text(state.listCart?.length.toString() ?? '0'),
-  //             child: const Icon(
-  //               Icons.shopping_bag_outlined,
-  //               color: Colors.black,
-  //               size: 30,
-  //             ),
-  //           );
-  //         })),
-  //     body: SingleChildScrollView(
-  //       child: Column(
-  //         children: [
-  //           Padding(
-  //             padding: EdgeInsets.only(
-  //               top: MediaQuery.of(context).padding.top,
-  //               left: 25,
-  //               right: 25,
-  //             ),
-  //             child: Row(
-  //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //               children: [
-  //                 IconButton(
-  //                   icon: Container(
-  //                       color: Colors.white,
-  //                       child: const Icon(
-  //                         Icons.arrow_back_ios_outlined,
-  //                         color: Colors.black,
-  //                       )),
-  //                   onPressed: () => Navigator.pop(context),
-  //                 ),
-  //                 IconButton(
-  //                   icon: Container(
-  //                       color: Colors.white,
-  //                       child: const Icon(
-  //                         Icons.favorite_outline,
-  //                         color: Colors.black,
-  //                       )),
-  //                   onPressed: () {},
-  //                 ),
-  //               ],
-  //             ),
-  //           ),
-  //           _buildImageDetailFood(),
-  //
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
   Future<void> _handleAction(
       BuildContext context, DetailFoodState state) async {}
 
