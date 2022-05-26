@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ButtonAddRemove extends StatelessWidget {
-  final int count;
+  final int _count;
   final VoidCallback? onCountAdd;
   final VoidCallback? onCountRemove;
 
   const ButtonAddRemove(
-      {Key? key, this.count = 0, this.onCountAdd, this.onCountRemove})
-      : super(key: key);
+      {Key? key, int? count = 0, this.onCountAdd, this.onCountRemove})
+      : _count = count ?? 0,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class ButtonAddRemove extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0), color: Colors.white),
             child: Text(
-              count.toString(),
+              _count.toString(),
               style: const TextStyle(
                   fontSize: 14.0,
                   fontWeight: FontWeight.bold,
