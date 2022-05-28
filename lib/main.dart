@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phannhuhailuu_17dh110419/components/app_bar.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
 import 'package:phannhuhailuu_17dh110419/view/home/detai_food/detail_food_bloc.dart';
+import 'package:phannhuhailuu_17dh110419/view/home/favorite_food/favorite_food_bloc.dart';
+import 'package:phannhuhailuu_17dh110419/view/home/favorite_food/favorite_food_widget.dart';
 import 'package:phannhuhailuu_17dh110419/view/home/home_widget.dart';
 
 void main() {
@@ -18,12 +20,16 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late CartBloc blocCart;
-  late DetailFoodBloc bloc;
+  late DetailFoodBloc blocDetailFood;
+  late FavoriteFoodBloc blocFavoriteFood;
+
+  final GlobalKey<ScaffoldState> globalKey = GlobalKey();
 
   @override
   void didChangeDependencies() {
     blocCart = CartBloc()..add(LoadCart());
-    bloc = DetailFoodBloc()..add(DetailLoadListFoodEvent());
+    blocDetailFood = DetailFoodBloc()..add(DetailLoadListFoodEvent());
+    blocFavoriteFood = FavoriteFoodBloc()..add(LoadFavoriteFoodEvent());
 
     super.didChangeDependencies();
   }
@@ -37,7 +43,10 @@ class _MyAppState extends State<MyApp> {
           create: (BuildContext context) => blocCart,
         ),
         BlocProvider<DetailFoodBloc>(
-          create: (BuildContext context) => bloc,
+          create: (BuildContext context) => blocDetailFood,
+        ),
+        BlocProvider<FavoriteFoodBloc>(
+          create: (BuildContext context) => blocFavoriteFood,
         ),
       ],
       child: MaterialApp(
@@ -45,13 +54,19 @@ class _MyAppState extends State<MyApp> {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: const Scaffold(
-            backgroundColor: Color(0xEAF5F5FD),
+          home: Scaffold(
+            key: globalKey,
+            backgroundColor: const Color(0xEAF5F5FD),
+            endDrawer: const FavoriteFoodWidget(),
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(60.0),
-              child: AppBarCustoms(),
+              preferredSize: const Size.fromHeight(60.0),
+              child: AppBarCustoms(
+                tapOpenDrawer: () {
+                  globalKey.currentState!.openEndDrawer();
+                },
+              ),
             ),
-            body: HomeWidget(),
+            body: const HomeWidget(),
           )),
     );
   }

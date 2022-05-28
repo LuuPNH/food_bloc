@@ -9,6 +9,7 @@ import 'package:phannhuhailuu_17dh110419/utils/app_string.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_widget.dart';
 import 'package:phannhuhailuu_17dh110419/view/home/detai_food/detail_food_bloc.dart';
+import 'package:phannhuhailuu_17dh110419/view/home/favorite_food/favorite_food_bloc.dart';
 
 class DetailFoodWidget extends StatefulWidget {
   final int? id;
@@ -70,7 +71,11 @@ class _DetailFoodWidgetState extends State<DetailFoodWidget> {
                           Icons.favorite_outline,
                           color: Colors.black,
                         )),
-                    onPressed: () {},
+                    onPressed: () {
+                      context
+                          .read<FavoriteFoodBloc>()
+                          .add(AddFavoriteFoodEvent(id: widget.id));
+                    },
                   ),
                 ],
               ),

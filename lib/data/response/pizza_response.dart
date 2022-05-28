@@ -8,8 +8,8 @@ class PizzaResponse {
 
   PizzaResponse(this.pizza);
 
-  PizzaResponse.fromJson(List<dynamic> json)
-      : pizza = (json).map((i) => Pizza.fromJson(i)).toList();
+  PizzaResponse.fromJson(List<dynamic>? json)
+      : pizza = (json)?.map((i) => Pizza.fromJson(i)).toList();
 }
 
 class PizzaRepository {

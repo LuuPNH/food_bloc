@@ -6,7 +6,7 @@ import 'package:phannhuhailuu_17dh110419/components/floating_button_cart.dart';
 import 'package:phannhuhailuu_17dh110419/components/food_item.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_widget.dart';
-import 'package:phannhuhailuu_17dh110419/view/destination_carousel/destination_arousel.dart';
+import 'package:phannhuhailuu_17dh110419/view/home/destination_carousel/destination_arousel.dart';
 import 'package:phannhuhailuu_17dh110419/view/home/home_bloc.dart';
 
 class HomeWidget extends StatefulWidget {
