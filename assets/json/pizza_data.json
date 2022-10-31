@@ -6,7 +6,7 @@
     "price": 449,
     "description": "Cheese",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/margherita.7d3b623ceb66e87fc7247fa81c6cfdc1.1.jpg?width=800"
+    "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/04/banh-pizza-thom-ngon.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "price": 529,
     "description": "Spiced paneeer, Onion,Green Capsicum & Red Paprika in Tandoori Sauce",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/tandoori-paneer.954d93452557209bebe0b7f49e776ba2.1.jpg?width=522"
+    "img": "http://cdn.tgdd.vn/Files/2021/08/24/1377468/cach-lam-pizza-pho-mai-bap-ngot-beo-ngay-don-gian-tai-nha-202108241444001705.jpg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "price": 569,
     "description": "Black Olives,Green Capsicum, Mushroom, Onion,Red Paprika, Sweet Corn",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/veggie-supreme.403f5e6cf9abb29247a97732c8aae860.1.jpg?width=800"
+    "img": "https://cdn.tgdd.vn/2020/09/CookProduct/1200bzhspm-1200x676.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "price": 569,
     "description": "Spiced Paneer, Herbed Onion&Green Capsicum, Red Paprika",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/double-paneer-supreme.9d215eb865735ce44225317997153b73.1.jpg?width=522"
+    "img": "https://cdn-www.vinid.net/0e01a0d2-cach-lam-pizza-hai-san-5.jpg"
   },
   {
     "id": 4,
@@ -42,7 +42,7 @@
     "price": 529,
     "description": "Veg Kebab,Onion,Green Capsicum,Tomato & Sweet Corn in Tandoori Sauce",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/veg-kebab-surprise.6895b792bfdd274d1bb822ff8dc1a69b.1.jpg?width=522"
+    "img": "https://tokbokki.com/wp-content/uploads/cach-lam-banh-pizza-hai-san_3.jpg"
   },
   {
     "id": 5,
@@ -51,7 +51,7 @@
     "price": 629,
     "description": "Herbed Chicken,Schezwan Chicken Meatball,Chicken Tikka",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/chicken-supreme.f29fa58b7f2a3ec307b6c0b44411f900.1.jpg?width=522"
+    "img": "https://sv2.vacdn.link/user_da898f38676ac5acdfc8b7651713a156/34dfd17b4f5eeba7117330c911ee1f61.jpeg"
   },
   {
     "id": 6,
@@ -60,7 +60,7 @@
     "price": 629,
     "description": "Chicken Tikka,Chicken Malai Tikka,Onion,Red Paprika",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/chicken-tikka-supreme.d118fcb7a45549b90fc6313f8b45a9cf.1.jpg?width=522"
+    "img": "https://top10quynhon.com/wp-content/uploads/pizza.jpg"
   },
   {
     "id": 7,
@@ -69,7 +69,7 @@
     "price": 629,
     "description": "Schezwan Chicken Meatball Herbed Chicken,Chicken Sausage,Geen Capsicum, Onion,Red Paprika",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/triple-chicken-feast.21e57422a5579843b4722a067fbda8ca.1.jpg?width=522"
+    "img": "https://top10quynhon.com/wp-content/uploads/pizza.jpg"
   },
   {
     "id": 8,
@@ -78,7 +78,7 @@
     "price": 569,
     "description": "Chicken Tikka, Onion, Tomato",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/chicken-tikka.4e3ef28838886936da1a2280543cfae8.1.jpg?width=522"
+    "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/04/banh-pizza-thom-ngon.jpg"
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "price": 529,
     "description": "Chicken Sausage",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/double-chicken-sausage.27693ba787c68a763bb3f0e397de0019.1.jpg?width=522"
+    "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/04/banh-pizza-thom-ngon.jpg"
   },
   {
     "id": 10,
@@ -96,7 +96,7 @@
     "price": 469,
     "description": "Schezwan Chicken Meatball Onion",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/spiced-chicken-meatballs.fcb515f6af388d6e30df81ca2968798c.1.jpg?width=522"
+    "img": "https://tokbokki.com/wp-content/uploads/cach-lam-banh-pizza-hai-san_3.jpg"
   },
   {
     "id": 11,
@@ -105,7 +105,7 @@
     "price": 419,
     "description": "Extra Cheese on Cheese",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/double-cheese.f8ac8046d97de45670aa7d41b5cf8db6.1.jpg?width=522"
+    "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/04/banh-pizza-thom-ngon.jpg"
   },
   {
     "id": 12,
@@ -114,7 +114,7 @@
     "price": 559,
     "description": "Herbed Chicken, Onion, Green Capsicum, Red Capsicum ",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/chicken-pepper-crunch.ad90bc84672d7cd34351745f4b77fe9c.1.jpg"
+    "img": "https://tokbokki.com/wp-content/uploads/cach-lam-banh-pizza-hai-san_3.jpg"
   },
   {
     "id": 13,
@@ -123,7 +123,7 @@
     "price": 659,
     "description": "Herbed Chicken, Onion, Green Capsicum, Red Capsicum ",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/italian-chicken-feast.1ccf57b605633e47ca4c6455340a5d2e.1.jpg"
+    "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/04/banh-pizza-thom-ngon.jpg"
   },
   {
     "id": 14,
@@ -132,7 +132,7 @@
     "price": 19,
     "description": "Cheese ,Sweet Corn",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/corn.4f5188ab4391cb45d4a4ed9e849f1e32.1.jpg"
+    "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/04/banh-pizza-thom-ngon.jpg"
   },
   {
     "id": 15,
@@ -141,7 +141,7 @@
     "price": 19,
     "description": "Cheese & Onion in Tandoori sause",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/tandoori-onion.27d62d7a89f3fd2bb2eb2b9f91d6223b.1.jpg"
+    "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/04/banh-pizza-thom-ngon.jpg"
   },
   {
     "id": 16,
@@ -150,7 +150,7 @@
     "price": 29,
     "description": "Cheese ,Chicken pepperoni",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/chicken-pepperoni.59a23d539b3675012fadb9e98b043216.1.jpg"
+    "img": "https://top10quynhon.com/wp-content/uploads/pizza.jpg"
   },
   {
     "id": 17,
@@ -159,7 +159,7 @@
     "price": 29,
     "description": "Cheese ,Chicken pepperoni",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/chicken-n-corn-delight.bc0460bc62d23a77e9db087010bcf00a.1.jpg"
+    "img": "https://cdn.huongnghiepaau.com/wp-content/uploads/2019/04/banh-pizza-thom-ngon.jpg"
   },
   {
     "id": 18,
@@ -168,6 +168,6 @@
     "price": 29,
     "description": "Onion Herbed & Green Capsicum, Red Capsicum, Mushroom, Baby Corn",
     "quantity": 1,
-    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/farmers-pick.fcd8cacee43fb94e173e5f04fdf2c2b5.1.jpg"
+    "img": "https://top10quynhon.com/wp-content/uploads/pizza.jpg"
   }
 ]
