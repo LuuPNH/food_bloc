@@ -64,8 +64,7 @@ class AppBarCustoms extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: Image.network(
-                "https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/247469207_1844936579026451_2833597105913512429_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_ohc=FxaXepsj4I4AX-41wUf&_nc_ht=scontent.fsgn5-8.fna&oh=00_AT8ns6__8qM8ereAwlpvtPTqIth33q1hhhssJxValeFVcA&oe=629192D2",
-                fit: BoxFit.cover,
+                'https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-profile-glyph-black-icon-png-image_691589.jpg',                fit: BoxFit.cover,
                 height: 30.0,
                 width: 30.0,
               ),

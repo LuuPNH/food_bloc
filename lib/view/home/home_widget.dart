@@ -1,8 +1,8 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_indicator/page_indicator.dart';
+import 'package:phannhuhailuu_17dh110419/components/floating_button_cart.dart';
 import 'package:phannhuhailuu_17dh110419/components/food_item.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_widget.dart';
@@ -60,23 +60,12 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget _buildBody(BuildContext context, HomeState state) {
     return Scaffold(
       backgroundColor: const Color(0xEAEAEAFF),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const CartWidget()));
-          },
-          backgroundColor: const Color(0xFFFDBF30),
-          elevation: 2,
-          child: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
-            return Badge(
-              badgeContent: Text(state.listCart?.length.toString() ?? '0'),
-              child: const Icon(
-                Icons.shopping_bag_outlined,
-                color: Colors.black,
-                size: 30,
-              ),
-            );
-          })),
+      floatingActionButton: FloatingButtonCart(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const CartWidget()));
+        },
+      ),
       body: SingleChildScrollView(
         physics: const ScrollPhysics(),
         child: Column(

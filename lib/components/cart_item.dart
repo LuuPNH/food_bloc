@@ -15,78 +15,78 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Stack(
-        children: [
-          Container(
-            height: 110,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Row(
-              children: [
-                if (cartItem?.item?.img != null)
-                  Container(
-                    height: 161.0,
-                    width: 150.0,
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: FadeInImage.assetNetwork(
-                        placeholder: 'assets/gif/loading.gif',
-                        image: cartItem!.item!.img!,
-                        fit: BoxFit.cover,
-                        fadeInCurve: Curves.easeIn),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: 110,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            children: [
+              if (cartItem?.item?.img != null)
+                Container(
+                  height: 161.0,
+                  width: 150.0,
+                  padding: const EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: FadeInImage.assetNetwork(
+                      placeholder: 'assets/gif/loading.gif',
+                      image: cartItem!.item!.img!,
+                      fit: BoxFit.cover,
+                      fadeInCurve: Curves.easeIn),
+                ),
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.only(
+                    left: 10,
+                    right: 10,
                   ),
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                      left: 10,
-                      right: 10,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          cartItem!.item!.name ?? '',
-                          style: const TextStyle(
-                            fontSize: 16,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        cartItem!.item!.name ?? '',
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          height: 1.5,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        'Price ${cartItem?.item?.price != null ? cartItem!.item!.price! : 0}' +
+                            AppStrings.usd,
+                        style: const TextStyle(
+                            fontSize: 14.0,
                             fontWeight: FontWeight.bold,
-                            height: 1.5,
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          'Price ${cartItem?.item?.price != null ? cartItem!.item!.price! : 0}' +
-                              AppStrings.usd,
-                          style: const TextStyle(
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.orangeAccent),
-                        ),
-                        const SizedBox(height: 5),
-                        ButtonAddRemove(
-                          onCountAdd: () {
-                            context
-                                .read<CartBloc>()
-                                .add(AddItemToCart(cartItem?.item));
-                          },
-                          count: cartItem?.count ?? 0,
-                          onCountRemove: () {
-                            context.read<CartBloc>().add(
-                                AddItemToCart(cartItem?.item, minus: true));
-                          },
-                        )
-                      ],
-                    ),
+                            color: Colors.orangeAccent),
+                      ),
+                      const SizedBox(height: 5),
+                      ButtonAddRemove(
+                        onCountAdd: () {
+                          context
+                              .read<CartBloc>()
+                              .add(AddItemToCart(cartItem?.item));
+                        },
+                        count: cartItem?.count ?? 0,
+                        onCountRemove: () {
+                          context
+                              .read<CartBloc>()
+                              .add(AddItemToCart(cartItem?.item, minus: true));
+                        },
+                      )
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

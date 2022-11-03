@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phannhuhailuu_17dh110419/components/app_bar.dart';
 import 'package:phannhuhailuu_17dh110419/view/cart/cart_bloc.dart';
+import 'package:phannhuhailuu_17dh110419/view/home/detai_food/detail_food_bloc.dart';
 import 'package:phannhuhailuu_17dh110419/view/home/home_widget.dart';
 
 void main() {
@@ -17,18 +18,28 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late CartBloc blocCart;
+  late DetailFoodBloc bloc;
 
   @override
   void didChangeDependencies() {
     blocCart = CartBloc()..add(LoadCart());
+    bloc = DetailFoodBloc()..add(DetailLoadListFoodEvent());
+
     super.didChangeDependencies();
   }
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CartBloc>(
-      create: (BuildContext context) => blocCart,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CartBloc>(
+          create: (BuildContext context) => blocCart,
+        ),
+        BlocProvider<DetailFoodBloc>(
+          create: (BuildContext context) => bloc,
+        ),
+      ],
       child: MaterialApp(
           title: 'Flutter Exam App',
           theme: ThemeData(

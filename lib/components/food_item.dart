@@ -21,7 +21,7 @@ class FoodItem extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => DetailFoodWidget(
-                          item: food,
+                          id: food?.id,
                         ))),
             child: Container(
               height: 110,
